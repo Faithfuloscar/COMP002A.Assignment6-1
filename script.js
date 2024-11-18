@@ -27,7 +27,13 @@ function reliableMultiply(a, b) {
       if (e instanceof MultiplicatorUnitFailure) {
         // retries the operation if the error is of type multiplicatorunitfailure.
         continue;
+      } else {
+        // if the error is of any other type, it'll re-throw it.
+        throw e;
       }
     }
   }
 }
+
+// Example console.log
+console.log(reliableMultiply(8, 8)); // should output 64
