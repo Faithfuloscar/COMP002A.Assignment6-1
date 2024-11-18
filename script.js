@@ -22,6 +22,12 @@ function reliableMultiply(a, b) {
   while (true){
     try {
       return primitiveMultiply(a, b); // Attempt to multiply the numbers
+      // catch(e) is used to handle exceptions (errors)
+    } catch (e) {
+      if (e instanceof MultiplicatorUnitFailure) {
+        // retries the operation if the error is of type multiplicatorunitfailure.
+        continue;
+      }
     }
   }
 }
