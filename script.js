@@ -18,4 +18,10 @@ function primitiveMultiply(a, b) {
 
 function reliableMultiply(a, b) {
   // Your code here.
+  // This ensures reliable multiplication by repeatedly calling primitiveMultiply until it succeeds.
+  while (true){
+    try {
+      return primitiveMultiply(a, b); // Attempt to multiply the numbers
+    }
+  }
 }
